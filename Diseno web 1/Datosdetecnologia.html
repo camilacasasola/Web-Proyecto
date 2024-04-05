@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos de Tecnología</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .header {
+      width: 100%;
+      height: 60px;
+      background-color: #007bff;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <a href="#"><i class="fas fa-home fa-lg text-white mr-2"></i></a>
+      Luna Restaurantes
+    </div>
+    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdeproducto.html">Producto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosderol.html">Rol</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdetecnologia.html">Tecnologia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdetransaccion.html">Transacción</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdeusuario.html">Usuario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdecaja.html">Caja</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdecargo.html">Cargos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdecomestible.html">Comestible</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdeconsecutivo.html">Consecutivo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdeequipo.html">Equipo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="AyudaDatos.html">Ayuda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Menu.html">Menú</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Salir</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="mb-4">Datos de Tecnología</h2>
+    <form>
+      <div class="form-group">
+        <label for="CodigoTecnologia">Código de Tecnología:</label>
+        <input type="number" class="form-control" id="CodigoTecnologia" placeholder="Ingrese el código de tecnología">
+      </div>
+      <div class="form-group">
+        <label for="CodigoRestaurante">Código de Restaurante:</label>
+        <input type="number" class="form-control" id="CodigoRestaurante" placeholder="Ingrese el código de restaurante">
+      </div>
+      <div class="form-group">
+        <label for="CodigoMarca">Código de Marca:</label>
+        <input type="number" class="form-control" id="CodigoMarca" placeholder="Ingrese el código de marca">
+      </div>
+      <div class="form-group">
+        <label for="DescripcionTecnologia">Descripción de Tecnología:</label>
+        <input type="text" class="form-control" id="DescripcionTecnologia" placeholder="Ingrese la descripción de tecnología">
+      </div>
+      <div class="form-group">
+        <label for="CodigoProveedor">Código de Proveedor:</label>
+        <input type="number" class="form-control" id="CodigoProveedor" placeholder="Ingrese el código de proveedor">
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-danger btn-block">Eliminar</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-warning btn-block">Editar</button>
+        </div>
+        <div class="col">
+          <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="footer">
+    © 2024 Luna Restaurantes. Todos los derechos reservados.
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

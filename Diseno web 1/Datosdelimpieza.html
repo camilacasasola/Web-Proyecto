@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos de Limpieza</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .header {
+      width: 100%;
+      height: 60px;
+      background-color: #2B79C2;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <a href="#"><i class="fas fa-home fa-lg text-white mr-2"></i></a>
+      Luna Restaurantes
+    </div>
+    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="AyudaDatos.html">Ayuda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Menu.html">Menú</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Salir</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdeplatillo.html">Platillo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdemesa.html">Mesa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdemedida.html">Medida</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdemarca.html">Marca</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdebebida.html">Bebida</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdeespecial.html">Especial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdelimpieza.html">Limpieza</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="mb-4">Datos de Limpieza</h2>
+    <form>
+      <div class="form-group">
+        <label for="codigoLimpieza">Código de Limpieza:</label>
+        <input type="number" class="form-control" id="codigoLimpieza" placeholder="Ingrese el código de limpieza">
+      </div>
+      <div class="form-group">
+        <label for="descripcionLimpieza">Descripción de Limpieza:</label>
+        <input type="text" class="form-control" id="descripcionLimpieza" placeholder="Ingrese la descripción de limpieza">
+      </div>
+      <div class="form-group">
+        <label for="codigoRestaurante">Código de Restaurante:</label>
+        <input type="number" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código de restaurante">
+      </div>
+      <div class="form-group">
+        <label for="cantidadLimpieza">Cantidad de Limpieza:</label>
+        <input type="number" class="form-control" id="cantidadLimpieza" placeholder="Ingrese la cantidad de limpieza">
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-danger btn-block">Eliminar</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-warning btn-block">Editar</button>
+        </div>
+        <div class="col">
+          <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="footer">
+    © 2024 Luna Restaurantes. Todos los derechos reservados.
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

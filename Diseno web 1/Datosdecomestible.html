@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos de Comestible</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .header {
+      width: 100%;
+      height: 60px;
+      background-color: #007bff;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <a href="#"><i class="fas fa-home fa-lg text-white mr-2"></i></a>
+      Luna Restaurantes
+    </div>
+    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+  </div>
+
+  <div class="container">
+    <h2 class="mb-4">Datos de Comestible</h2>
+    <form>
+      <div class="form-group">
+        <label for="codigoComestible">Código de Comestible:</label>
+        <input type="number" class="form-control" id="codigoComestible" placeholder="Ingrese el código del comestible">
+      </div>
+      <div class="form-group">
+        <label for="descripcionComestible">Descripción de Comestible:</label>
+        <input type="text" class="form-control" id="descripcionComestible" placeholder="Ingrese la descripción del comestible">
+      </div>
+      <div class="form-group">
+        <label for="cantidadComestible">Cantidad de Comestible:</label>
+        <input type="number" class="form-control" id="cantidadComestible" placeholder="Ingrese la cantidad del comestible">
+      </div>
+      <div class="form-group">
+        <label for="codigoRestaurante">Código de Restaurante:</label>
+        <input type="number" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código del restaurante">
+      </div>
+      <div class="form-group">
+        <label for="tipoComestible">Tipo de Comestible:</label>
+        <input type="text" class="form-control" id="tipoComestible" placeholder="Ingrese el tipo del comestible">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    © 2024 Luna Restaurantes. Todos los derechos reservados.
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

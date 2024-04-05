@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sección de Búsqueda</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      width: 100%;
+      height: 60px;
+      background-color: #2B79C2;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .navbar {
+      background-color: #f8f9fa;
+      padding: 10px 0;
+    }
+    .navbar-nav .nav-link {
+      color: #2b79c2;
+      font-weight: bold;
+    }
+
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>Luna Restaurantes</div>
+    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="AyudaReportes.html">Ayuda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Menu.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Salir</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Busqueda.html">Restaurantes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Busquedabebida.html">Bebidas</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="search-section">
+    <h2>Sección de Búsqueda</h2>
+    <form class="search-form">
+      <div class="form-group row">
+        <label for="codigo" class="col-sm-2 col-form-label">Código:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="codigo" placeholder="Código">
+        </div>
+        <label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <div class="search-results">
+      <h3>Resultados de la búsqueda:</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Cantidad de Clientes</th>
+            <th scope="col">Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Restaurante A</td>
+            <td>Dirección A</td>
+            <td>100</td>
+            <td>123-456-789</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Restaurante B</td>
+            <td>Dirección B</td>
+            <td>150</td>
+            <td>987-654-321</td>
+          </tr>
+          <!-- Agrega más filas según sea necesario -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2024 Luna Restaurantes. Todos los derechos reservados.
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
