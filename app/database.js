@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import 'dotenv/config'
 
-const DB_CONNECTION = process.env.CLOUD_DB
+const DB_CONNECTION = process.env.CONEX_DB
 
 async function connect() {
   try {
@@ -9,9 +9,9 @@ async function connect() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log('Conexión a MongoDB establecida');
+    console.log('Conexinn a MongoDB establecida correctamente');
   } catch (error) {
-    console.error('Error al conectar a MongoDB:', error);
+    console.error('Error al conectar a la base de datos de MongoDB:', error);
   }
 }
 

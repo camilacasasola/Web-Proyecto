@@ -6,7 +6,7 @@ import restaurant from './routes/restaurante.js'
 import bebida from './routes/bebida.js'
 
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 8000
 const app = express()
 
 app.use(cors())
