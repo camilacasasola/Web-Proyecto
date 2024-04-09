@@ -6,6 +6,7 @@ const express = require('express');
 require ('dotenv').config();
 //conexion a la base de datos 
 const { connect } = require('./database.js');
+const bodyParser = require('body-parser'); // Importa body-parser
 
 
 
@@ -14,6 +15,20 @@ const PORT = process.env.PORT || 8000
 //creacion de la instancia para una app express
 //para facilitar solicitudes y cualquier recurso de un servicio web
 const app = express()
+
+// Configura body-parser
+//es crucial para que el username y password del login no entren como indefinidos sino no se reconocen
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Middleware para registrar los datos de la solicitud en la consola
+const logRequestData = (req, res, next) => {
+    console.log('Datos del formulario server:', req.body);
+    next(); // Llama a next() para continuar con el flujo de la solicitud
+  };
+  
+  // Usa el middleware en la aplicación Express
+  app.use(logRequestData);
 
 //Middleware para parsear las peticiones en formato json
 //osea convertir de cadena de texto a una estructura mas util

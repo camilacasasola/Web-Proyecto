@@ -7,7 +7,7 @@ const loginUserController = async (req, res) => {
     const { username, password } = req.body;
 
     // Imprimir el cuerpo de la solicitud para verificar los datos recibidos
-    console.log('Datos del formulario:', { username, password });
+    console.log('Datos del formulario controller:', { username, password });
     
     // Buscar el usuario en la base de datos por su nombre de usuario
     const user = await User.findOne({ username });
@@ -18,9 +18,12 @@ const loginUserController = async (req, res) => {
       return res.status(401).json({ message: 'Usuario no encontrado' });
     }
     
+    const storedPassword = user.password;
     // Comparar la contraseña proporcionada con la contraseña almacenada en la base de datos
-    const isMatch = await bcrypt.compare(password, user.password);
-    
+    const isMatch = await bcrypt.compare(password, storedPassword);
+    //validacion
+    console.log('Contrasena en la db',storedPassword);
+    console.log('Contrasena ingresada',password);
     // Si las contraseñas no coinciden
     if (!isMatch) {
       console.log('Contraseña incorrecta.');
@@ -37,3 +40,4 @@ const loginUserController = async (req, res) => {
 };
 
 module.exports = { loginUserController };
+//come
