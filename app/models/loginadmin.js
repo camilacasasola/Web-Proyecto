@@ -31,6 +31,6 @@ loginSchema.pre('save', async function(next) {
   }
 });
 
-const Login = mongoose.model('Login', loginSchema);
+const Login = mongoose.model('LoginAdmin', loginSchema);
 
 module.exports = Login;

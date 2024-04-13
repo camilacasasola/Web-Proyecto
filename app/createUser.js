@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const Login = require('./models/login'); // Asegúrate de reemplazar esto con la ruta correcta a tu modelo
+const Login = require('./models/loginadmin'); // Asegúrate de reemplazar esto con la ruta correcta a tu modelo
 
 mongoose.connect('mongodb://localhost:27017/DB_PFinalWEB1', {
   useNewUrlParser: true,

@@ -37,7 +37,7 @@ app.use(express.json())
 app.use(cors())
 
 // Rutas para el manejo de login
-const authRoutes = require('./routes/login');
+const authRoutes = require('./routes/loginadmin.js');
 app.use('/api/auth', authRoutes);
 //ejecuta la conexion
 //connect()
@@ -48,14 +48,14 @@ app.use('/api/auth', authRoutes);
 app.use(express.static(path.join(__dirname, '..', 'Diseno web 1')));//aca va '..'
 
 // Importa las rutas
-const menuRoutes = require('./routes/menu'); // No necesitas '.js'
+const menuRoutes = require('./routes/home1'); // No necesitas '.js'
 // Usa el router 'menu'
-app.use('/menu', menuRoutes);
+app.use('/home1', menuRoutes);
 
 
 // Define la ruta para la página de inicio, que servirá 'Menu.html'
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'..', 'Diseno web 1', 'Menu.html'));//aca va '..'
+    res.sendFile(path.join(__dirname,'..', 'Diseno web 1', 'home 1.html'));//aca va '..'
   });
 
 //se levanta el servicio
