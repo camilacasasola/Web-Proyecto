@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost:27017/DB_PFinalWEB1', {
 .catch(err => console.error('Error al conectar con MongoDB', err));
 
 const username = 'admin';
-const password = 'hola'; // Reemplaza esto con la contraseña que desees
+const password = 'admin'; // Reemplaza esto con la contraseña que desees
 
 const newUser = new Login({
   username,

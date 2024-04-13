@@ -51,18 +51,18 @@
   </div>
   <div class="login-form">
     <h2 class="mb-4">Iniciar Sesión</h2>
-    <form>
+    <form action="/api/auth/login" method="post">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-user"></i></span>
         </div>
-        <input type="text" class="form-control" placeholder="Nombre de Usuario">
+        <input type="text" name="username" class="form-control" placeholder="Nombre de Usuario">
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-lock"></i></span>
         </div>
-        <input type="password" class="form-control" placeholder="Contraseña">
+        <input type="password" name="password" class="form-control" placeholder="Contraseña">
       </div>
       <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
     </form>
