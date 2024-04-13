@@ -18,7 +18,7 @@
     .header {
       width: 100%;
       height: 60px;
-      background-color: #007bff;
+      background-color: #2B79C2;
       color: #fff;
       display: flex;
       justify-content: space-between;
@@ -47,9 +47,51 @@
       <a href="#"><i class="fas fa-home fa-lg text-white mr-2"></i></a>
       Luna Restaurantes
     </div>
-    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+    <a href="home.html"  class="btn btn-danger"><i class="fas fa-times"></i></a>
   </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Menu.html">Menú</a>
+        </li>
 
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdetecnologia.html">Tecnología</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdeplatillo.html">Platillo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdemesa.html">Mesa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdemedida.html">Medida</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdemarca.html">Marca</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdelimpieza.html">Limpieza</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdecomestible.html">Comestible</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdebebida.html">Bebida</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdeequipo.html">Equipo</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="Datosdeespecial.html">Especial</a>
+        </li>
+
+     
+      </ul>
+    </div>
+  </nav>
   <div class="container">
     <h2 class="mb-4">Datos de Comestible</h2>
     <form>
@@ -73,8 +115,22 @@
         <label for="tipoComestible">Tipo de Comestible:</label>
         <input type="text" class="form-control" id="tipoComestible" placeholder="Ingrese el tipo del comestible">
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-danger btn-block">Eliminar</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-warning btn-block">Editar</button>
+        </div>
+        <div class="col">
+          <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
+        </div>
+      </div>
     </form>
+  </div>    </form>
   </div>
 
   <div class="footer">

@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar Sesión</title>
+  <title>Registro</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome para los iconos -->
@@ -13,7 +14,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       background-color: #f8f9fa;
     }
     .header {
@@ -29,18 +30,21 @@
       top: 0;
       left: 0;
     }
-    .login-form {
+    .form-container {
       width: 300px;
       margin-top: 80px; /* Espacio para el header */
       text-align: center;
     }
-    .login-form .form-control {
+    .form-container .form-control {
       padding-left: 2.375rem;
     }
-    .login-form .input-group-text {
-      background-color: transparent;
-      border: none;
-      border-right: 1px solid #ced4da;
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
@@ -49,23 +53,29 @@
     <div>Luna Restaurantes</div>
     <button class="btn btn-danger"><i class="fas fa-times"></i></button>
   </div>
-  <div class="login-form">
-    <h2 class="mb-4">Iniciar Sesión</h2>
+  <div class="form-container">
+    <h2 class="mb-4">Registro de Cliente</h2>
     <form>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-user"></i></span>
-        </div>
-        <input type="text" class="form-control" placeholder="Nombre de Usuario">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Nombre de Cliente">
       </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-lock"></i></span>
-        </div>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Correo Electrónico">
+      </div>
+      <div class="form-group">
         <input type="password" class="form-control" placeholder="Contraseña">
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Cédula">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Teléfono">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
     </form>
+  </div>
+  <div class="footer">
+    © 2024 Luna Restaurantes. Todos los derechos reservados.
   </div>
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

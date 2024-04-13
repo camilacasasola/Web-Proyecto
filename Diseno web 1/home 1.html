@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      width: 100%;
+      height: 60px;
+      background-color: #2B79C2;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .image-collection {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .image-collection img {
+      margin: 10px;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .image-container {
+  text-align: center;
+  margin-bottom: 10px; /* Espacio entre cada imagen */
+}
+
+.image-alt-text {
+  display: block;
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>Luna Restaurantes</div>
+    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+  </div>
+
+  <div class="welcome-section">
+    <div class="image-collection">
+      <div class="image-container">
+        <a href="home cliente.html">
+          <img src="https://cdn.icon-icons.com/icons2/1732/PNG/512/iconfinder-securityprotectlockshield35-4021451_113107.png" alt="Clientes">
+        </a>
+        <span class="image-alt-text">Clientes</span>
+      </div>
+      <div class="image-container">
+        <a href="home.html">
+          <img src="https://cdn.icon-icons.com/icons2/1732/PNG/512/iconfinder-securityprotectlockshield26-4021460_113100.png" alt="Administradores">
+        </a>
+        <span class="image-alt-text">Administradores</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2024 Luna Restaurantes. Todos los derechos reservados.
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -18,7 +18,7 @@
     .header {
       width: 100%;
       height: 60px;
-      background-color: #007bff;
+      background-color: #2B79C2;
       color: #fff;
       display: flex;
       justify-content: space-between;
@@ -47,9 +47,27 @@
       <a href="#"><i class="fas fa-home fa-lg text-white mr-2"></i></a>
       Luna Restaurantes
     </div>
-    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+    <a href="home.html"  class="btn btn-danger"><i class="fas fa-times"></i></a>
   </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Menu.html">Menu</a>
+        </li>
 
+  <li class="nav-item">
+    <a class="nav-link" href="Datosdecliente.html">Cliente</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="Datosdecargo.html">Cargo</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="Datosdetransaccion.html">Transaccion</a>
+  </li>
+</ul>
+</div>
+</nav>
   <div class="container">
     <h2 class="mb-4">Datos del Cliente</h2>
     <form>
@@ -65,7 +83,21 @@
         <label for="montoPagadoCliente">Monto Pagado por Cliente:</label>
         <input type="number" class="form-control" id="montoPagadoCliente" placeholder="Ingrese el monto pagado por el cliente">
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-danger btn-block">Eliminar</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-warning btn-block">Editar</button>
+        </div>
+        <div class="col">
+          <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
+        </div>
+      </div>
+
     </form>
   </div>
 

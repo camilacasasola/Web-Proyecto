@@ -54,13 +54,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="AyudaReportes.html">Ayuda</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="Menu.html">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Salir</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Busqueda.html">Restaurantes</a>
@@ -73,7 +67,7 @@
   </nav>
 
   <div class="search-section">
-    <h2>Sección de Búsqueda</h2>
+    <h2>Sección de Búsqueda de Restaurantes</h2>
     <form class="search-form">
       <div class="form-group row">
         <label for="codigo" class="col-sm-2 col-form-label">Código:</label>
@@ -85,7 +79,18 @@
           <input type="text" class="form-control" id="nombre" placeholder="Nombre">
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Buscar</button>
+      <div class="form-group row">
+        <div class="col-sm-2"></div> <!-- Espacio en blanco para alinear con los campos de texto -->
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary mr-2">Buscar</button>
+          <button type="button" class="btn btn-info  mr-2" id="actualizar">Actualizar</button>
+          <button type="button" class="btn btn-secondary mr-2" id="limpiar">Limpiar</button>
+          <button type="button" class="btn btn-success mr-2">
+            <a href="Datosderestaurante.html" style="color: white; text-decoration: none;">Agregar</a>
+          </button>
+          <button type="button" class="btn btn-danger" id="eliminar">Eliminar</button>
+        </div>
+      </div>
     </form>
 
     <div class="search-results">
