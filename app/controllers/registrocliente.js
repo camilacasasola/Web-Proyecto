@@ -15,11 +15,11 @@ const registrarCliente = async (req, res) => {
     await nuevoCliente.save();
     // Enviar un script de alerta como respuesta
     const mensaje = 'Cliente registrado exitosamente';
-    res.send(`<script>alert('${mensaje}'); window.location.href = '/';</script>`);
+    res.send(`<script>alert('${mensaje}'); window.location.href = '/home cliente.html';</script>`);
   } catch (error) {
     console.error('Error al registrar cliente:', error);
     // Enviar un script de alerta con el mensaje de error como respuesta
-    res.send(`<script>alert('Error al registrar el usuario: ${error.message}'); window.location.href = '/';</script>`);
+    res.send(`<script>alert('Error al registrar el usuario: ${error.message}'); window.location.href = '/registro.html';</script>`);
   }
 };
 
