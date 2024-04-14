@@ -36,13 +36,18 @@ app.use(express.json())
 //Middleware(objetos req y res) para cors
 app.use(cors())
 
-// Rutas para el manejo de login
+// Rutas para el manejo de loginadmin
 const authRoutes = require('./routes/loginadmin.js');
 app.use('/api/auth', authRoutes);
 //ejecuta la conexion
 //connect()
 //app.use(restaurant)
 //app.use(bebida)
+
+// Importar rutas
+const loginClienteRoutes = require('./routes/logincliente');
+// Usar rutas
+app.use('/', loginClienteRoutes);
 
 //Sirve los archivos estaticos desde la carpeta y asegura que la ruta sea correcta
 app.use(express.static(path.join(__dirname, '..', 'Diseno web 1')));//aca va '..'
