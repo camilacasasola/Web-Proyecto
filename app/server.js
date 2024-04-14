@@ -47,10 +47,17 @@ app.use('/api/auth', authRoutes);
 //Sirve los archivos estaticos desde la carpeta y asegura que la ruta sea correcta
 app.use(express.static(path.join(__dirname, '..', 'Diseno web 1')));//aca va '..'
 
-// Importa las rutas
-const menuRoutes = require('./routes/home1'); // No necesitas '.js'
+//rutas de home1 primer vista que se inicia
+const home1Routes = require('./routes/home1'); // No necesitas '.js'
 // Usa el router 'menu'
-app.use('/home1', menuRoutes);
+app.use('/home1', home1Routes);
+
+//ruta registroclientes
+const registroClienteRoutes = require('./routes/registrocliente');
+
+// Middleware para las rutas del registro de clientes
+app.use('/api/registrocliente', registroClienteRoutes);
+
 
 
 // Define la ruta para la página de inicio, que servirá 'Menu.html'

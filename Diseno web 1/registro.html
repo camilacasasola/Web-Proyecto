@@ -55,21 +55,21 @@
   </div>
   <div class="form-container">
     <h2 class="mb-4">Registro de Cliente</h2>
-    <form>
+    <form action="/api/registrocliente" method="post">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Nombre de Cliente">
+        <input type="text" class="form-control" placeholder="Nombre de Cliente" name="nombre">
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" placeholder="Correo Electrónico">
+        <input type="email" class="form-control" placeholder="Correo Electrónico" name="email">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" placeholder="Contraseña">
+        <input type="password" class="form-control" placeholder="Contraseña" name="password">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Cédula">
+        <input type="text" class="form-control" placeholder="Cédula" name="cedula">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Teléfono">
+        <input type="text" class="form-control" placeholder="Teléfono" name="telefono">
       </div>
       <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
     </form>
