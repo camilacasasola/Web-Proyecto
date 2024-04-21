@@ -97,43 +97,44 @@
   </nav>
 
   <div class="container">
+    <div class="half-page">
     <h2 class="mb-4">Datos de Bebida</h2>
-    <form>
+    <form action="/api/bebidacreate" method="POST">
       <div class="form-group">
         <label for="codigo">Código:</label>
-        <input type="text" class="form-control" id="codigo" placeholder="Ingrese el código de la bebida">
+        <input type="text" name="codigo" class="form-control" id="codigo" placeholder="Ingrese el código de la bebida">
       </div>
       <div class="form-group">
         <label for="nombre">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre de la bebida">
+        <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese el nombre de la bebida">
       </div>
       <div class="form-group">
         <label for="tipo">Tipo:</label>
-        <input type="text" class="form-control" id="tipo" placeholder="Ingrese el tipo de la bebida">
+        <input type="text" name="tipo" class="form-control" id="tipo" placeholder="Ingrese el tipo de la bebida">
       </div>
       <div class="form-group">
         <label for="marca">Marca:</label>
-        <input type="text" class="form-control" id="marca" placeholder="Ingrese la marca de la bebida">
+        <input type="text" name="marca" class="form-control" id="marca" placeholder="Ingrese la marca de la bebida">
       </div>
       <div class="form-group">
         <label for="precio">Precio:</label>
-        <input type="text" class="form-control" id="precio" placeholder="Ingrese el precio de la bebida">
+        <input type="text" name="precio" class="form-control" id="precio" placeholder="Ingrese el precio de la bebida">
       </div>
       <div class="form-group">
         <label for="codigoRestaurante">Código de Restaurante:</label>
-        <input type="text" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código del restaurante">
+        <input type="text" name="codigorestaurante" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código del restaurante">
       </div>
       <div class="form-group">
         <label for="pais">País:</label>
-        <input type="text" class="form-control" id="pais" placeholder="Ingrese el país de la bebida">
+        <input type="text" name="pais" name="pais" class="form-control" id="pais" placeholder="Ingrese el país de la bebida">
       </div>
       <div class="form-group">
         <label for="codigoMedida">Código de Medida:</label>
-        <input type="text" class="form-control" id="codigoMedida" placeholder="Ingrese el código de medida">
+        <input type="text" name="codigomedida" class="form-control" id="codigoMedida" placeholder="Ingrese el código de medida">
       </div>
       <div class="form-group">
         <label for="ano">Año:</label>
-        <input type="text" class="form-control" id="ano" placeholder="Ingrese el año de la bebida">
+        <input type="text" name="ano" class="form-control" id="ano" placeholder="Ingrese el año de la bebida">
       </div>
       <div class="row">
         <div class="col">
@@ -151,14 +152,42 @@
       </div>
     </form>
   </div>
+  </div>
+
+  <!-- Contenedor para la tabla de bebidas -->
+  <div class="data-container">
+    <h2 class="mb-4">Bebidas Registradas</h2>
+    <div class="table-responsive">
+      <table class="table table-striped" id="tablaBebidas">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Código Restaurante</th>
+            <th>País</th>
+            <th>Código Medida</th>
+            <th>Año</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los datos de las bebidas se insertarán aquí mediante JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
 
   <div class="footer">
     © 2024 Luna Restaurantes. Todos los derechos reservados.
   </div>
-
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/app/GetColecciones/bebidascreateget.js"></script>
 </body>
 </html>

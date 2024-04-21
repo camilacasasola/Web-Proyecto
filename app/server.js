@@ -15,6 +15,8 @@ const PORT = process.env.PORT || 8000
 //creacion de la instancia para una app express
 //para facilitar solicitudes y cualquier recurso de un servicio web
 const app = express()
+//es para servir archivos estaticos y mostrar los gets de las colecciones de la base de datos
+app.use('/app', express.static('app'));
 
 // Configura body-parser
 //es crucial para que el username y password del login no entren como indefinidos sino no se reconocen
@@ -45,6 +47,10 @@ app.use('/api/auth', authRoutes);
 //app.use(bebida)
 
 // Importar rutas
+// Define la ruta para la página de inicio, que servirá 'Menu.html'
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname,'..', 'Diseno web 1', 'home 1.html'));//aca va '..'
+});
 const loginClienteRoutes = require('./routes/logincliente');
 // Usar rutas
 app.use('/', loginClienteRoutes);
@@ -59,16 +65,18 @@ app.use('/home1', home1Routes);
 
 //ruta registroclientes
 const registroClienteRoutes = require('./routes/registrocliente');
-
 // Middleware para las rutas del registro de clientes
 app.use('/api/registrocliente', registroClienteRoutes);
 
+//ruta createbebidas
+const bebidaRoutes = require('./routes/bebidacreate');
+// Usar rutas de bebidas
+app.use('/api/bebidacreate', bebidaRoutes); // Aquí es donde se usa el router de bebidas
 
-
-// Define la ruta para la página de inicio, que servirá 'Menu.html'
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'..', 'Diseno web 1', 'home 1.html'));//aca va '..'
-  });
+//ruta para get de bebidas
+//const getBebidas = require('./routes/bebidacreateget.js');
+//usar las rutes get
+//app.use('/api/bebidacreateget', getBebidas);
 
 //se levanta el servicio
 connect().then(() => {
