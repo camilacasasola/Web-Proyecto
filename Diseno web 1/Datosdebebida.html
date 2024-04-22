@@ -99,7 +99,7 @@
   <div class="container">
     <div class="half-page">
     <h2 class="mb-4">Datos de Bebida</h2>
-    <form action="/api/bebidacreate" method="POST">
+    <form id="bebidaForm" action="/api/bebidacreate" method="POST">
       <div class="form-group">
         <label for="codigo">Código:</label>
         <input type="text" name="codigo" class="form-control" id="codigo" placeholder="Ingrese el código de la bebida">
@@ -135,16 +135,17 @@
       <div class="form-group">
         <label for="ano">Año:</label>
         <input type="text" name="ano" class="form-control" id="ano" placeholder="Ingrese el año de la bebida">
+        <div class="message"></div>
       </div>
       <div class="row">
         <div class="col">
           <button type="submit" class="btn btn-primary btn-block">Guardar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-danger btn-block">Eliminar</button>
+          <button type="button" id="btnEliminar" class="btn btn-danger btn-block">Eliminar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-warning btn-block">Editar</button>
+          <button type="button" id="btnEditar" class="btn btn-warning btn-block">Editar</button>
         </div>
         <div class="col">
           <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
