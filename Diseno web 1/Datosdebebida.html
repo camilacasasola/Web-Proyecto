@@ -6,9 +6,10 @@
   <title>Datos de Bebida</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome para los iconos -->
+  <!-- Font Awesome para los iconos, en .container el max-width es originalmente 500px-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <style>
+  <!--agregue las primeras 3 lineas del container, junto con la clase del form y table y form control-->
+  <style> 
     body {
       margin: 0;
       padding: 0;
@@ -16,13 +17,30 @@
       background-color: #f8f9fa;
     }
     .container {
-      max-width: 500px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      max-width: 1500px;
       margin: 50px auto;
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     }
+    .form-container{
+      margin: 20px;
+      flex-basis: 50%;
+    }
+    .table-container{
+      margin: 20px;
+      flex-basis: 70%;
+    }
+    .form-control{
+      width: 100%;
+      max-width: 520px;
+    }
+
     .header {
       width: 100%;
       height: 60px;
@@ -97,9 +115,9 @@
   </nav>
 
   <div class="container">
-    <div class="half-page">
-    <h2 class="mb-4">Datos de Bebida</h2>
-    <form id="bebidaForm" action="/api/bebidacreate" method="POST">
+    <div class="form-container">
+     <h2 class="mb-4">Datos de Bebida</h2>
+     <form id="bebidaForm" action="/api/bebidacreate" method="POST">
       <div class="form-group">
         <label for="codigo">Código:</label>
         <input type="text" name="codigo" class="form-control" id="codigo" placeholder="Ingrese el código de la bebida">
@@ -151,12 +169,12 @@
           <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
         </div>
       </div>
-    </form>
-  </div>
-  </div>
+     </form>
+    </div>
+   <!--</div>-->
 
   <!-- Contenedor para la tabla de bebidas -->
-  <div class="data-container">
+  <div class="table-container">
     <h2 class="mb-4">Bebidas Registradas</h2>
     <div class="table-responsive">
       <table class="table table-striped" id="tablaBebidas">
@@ -177,10 +195,10 @@
           <!-- Los datos de las bebidas se insertarán aquí mediante JavaScript -->
         </tbody>
       </table>
-    </div>
-  </div>
+     </div>
+     </div>
 </div>
-</div>
+      <!--</div>-->
 
   <div class="footer">
     © 2024 Luna Restaurantes. Todos los derechos reservados.
