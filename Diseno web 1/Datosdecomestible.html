@@ -8,6 +8,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome para los iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!--agregue las primeras 3 lineas del container, junto con la clase del form y table y form control-->
   <style>
     body {
       margin: 0;
@@ -26,13 +27,30 @@
       padding: 0 20px;
     }
     .container {
-      max-width: 500px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      max-width: 1500px;
       margin: 50px auto;
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     }
+    .form-container{
+      margin: 20px;
+      flex-basis: 50%;
+    }
+    .table-container{
+      margin: 20px;
+      flex-basis: 70%;
+    }
+    .form-control{
+      width: 100%;
+      max-width: 520px;
+    }
+
     .footer {
       background-color: #f8f9fa;
       text-align: center;
@@ -93,27 +111,28 @@
     </div>
   </nav>
   <div class="container">
+    <div class="form-container">
     <h2 class="mb-4">Datos de Comestible</h2>
-    <form>
+    <form action="/api/createcomestible" method="post">
       <div class="form-group">
-        <label for="codigoComestible">Código de Comestible:</label>
-        <input type="number" class="form-control" id="codigoComestible" placeholder="Ingrese el código del comestible">
+        <label for="codigoComestible">Código del Comestible:</label>
+        <input type="text" name="codigocomestible" class="form-control" id="codigoComestible" placeholder="Ingrese el código del comestible">
       </div>
       <div class="form-group">
-        <label for="descripcionComestible">Descripción de Comestible:</label>
-        <input type="text" class="form-control" id="descripcionComestible" placeholder="Ingrese la descripción del comestible">
+        <label for="descripcionComestible">Descripción del Comestible:</label>
+        <input type="text" name="descripcioncomestible" class="form-control" id="descripcionComestible" placeholder="Ingrese la descripción del comestible">
       </div>
       <div class="form-group">
-        <label for="cantidadComestible">Cantidad de Comestible:</label>
-        <input type="number" class="form-control" id="cantidadComestible" placeholder="Ingrese la cantidad del comestible">
+        <label for="cantidadComestible">Cantidad del Comestible:</label>
+        <input type="text" name="cantidadcomestible" class="form-control" id="cantidadComestible" placeholder="Ingrese la cantidad del comestible">
       </div>
       <div class="form-group">
         <label for="codigoRestaurante">Código de Restaurante:</label>
-        <input type="number" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código del restaurante">
+        <input type="text" name="codigorestaurante" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código del restaurante">
       </div>
       <div class="form-group">
         <label for="tipoComestible">Tipo de Comestible:</label>
-        <input type="text" class="form-control" id="tipoComestible" placeholder="Ingrese el tipo del comestible">
+        <input type="text" name="tipocomestible" class="form-control" id="tipoComestible" placeholder="Ingrese el tipo del comestible">
       </div>
       <div class="row">
         <div class="col">
@@ -131,7 +150,30 @@
       </div>
     </form>
   </div>    </form>
-  </div>
+
+  <!-- Contenedor para la tabla de bebidas -->
+  <div class="table-container">
+    <h2 class="mb-4">Comestibles Registradas</h2>
+    <div class="table-responsive">
+      <table class="table table-striped" id="tablacomestible">
+        <thead>
+          <tr>
+            <th>Código del Comestible</th>
+            <th>Descripción del Comestible</th>
+            <th>Cantidad del Comestible</th>
+            <th>Código de Restaurante</th>
+            <th>Tipo de Comestible</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los datos de las bebidas se insertarán aquí mediante JavaScript -->
+        </tbody>
+      </table>
+     </div>
+     </div>
+
+</div>
+  <!--</div>-->
 
   <div class="footer">
     © 2024 Luna Restaurantes. Todos los derechos reservados.
@@ -141,5 +183,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/app/GetColecciones/comestiblecreateget.js"></script>
 </body>
 </html>

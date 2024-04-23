@@ -17,7 +17,7 @@ fetch('/api/bebidacreate')
                     row.insertCell(8).textContent = bebida.ano;
                 });
             })
-            .catch(error => console.error('Error loading the beverages:', error));
+            .catch(error => console.error('Error al cargar los colecciones:', error));
 
 //aca va el codigo para editar y eliminar
 //se crea unas constantes para obtener el form y table mediante el id
