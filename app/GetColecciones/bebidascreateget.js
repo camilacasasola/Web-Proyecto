@@ -1,3 +1,5 @@
+//Esta parte se conecta a la direccion en la que ingresan los parametros en el html
+//y con el get obterner la informacion de la tabla
 fetch('/api/bebidacreate')
             .then(response => response.json())
             .then(bebidas => {
@@ -18,12 +20,15 @@ fetch('/api/bebidacreate')
             .catch(error => console.error('Error loading the beverages:', error));
 
 //aca va el codigo para editar y eliminar
+//se crea unas constantes para obtener el form y table mediante el id
 document.addEventListener('DOMContentLoaded', () => {
     const table = document.getElementById('tablaBebidas');
     const form = document.getElementById('bebidaForm');
     const messageContainer = form.querySelector('.message');
 
-    // Evento de clic para todas las filas de la tabla
+    //Evento de click para todas las filas de la tabla
+    //esta seccion sirve para traer la informacion que form y mediante 
+    //el click poder seleccionar la linea de la tabla y mandar la informacion de la tabla al form de vuelta
     table.addEventListener('click', function(event) {
         let target = event.target;
         while (target && target.nodeName !== "TR") {
@@ -41,12 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
             form.codigomedida.value = cells[7].textContent;
             form.ano.value = cells[8].textContent;
     
-            // Limpia cualquier mensaje previo
+            //Limpia cualquier mensaje previo
             if (messageContainer) messageContainer.textContent = '';
         }
     });
 
-    // Evento de clic para el botón de editar
+    //Evento de clic para el botón de editar y poder actualizar y guardar cambios
     document.getElementById('btnEditar').addEventListener('click', function() {
         const bebidaData = {
             codigo: form.codigo.value,
@@ -61,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         //llamada fetch para actualizar (PUT) la bebida
+        //la ruta del html se hace el llamado para acceder a la informacion
+        //mediante el uso del PUT se hace el update
         fetch(`/api/bebidacreate/${bebidaData.codigo}`, {
             method: 'PUT',
             headers: {
@@ -70,34 +77,35 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => response.json())
         .then(data => {
-            // Mostrar mensaje de éxito o manejar errores
+            //se muestra mensaje de exito o manejar errores
             form.querySelector('.message').textContent = 'Bebida actualizada con éxito.';
-            // Actualizar la página después de un breve retraso para que el usuario pueda leer el mensaje
+            //Actualizar la pagina despues de un breve retraso para que el usuario pueda leer el mensaje de exito 
             setTimeout(() => {
                 window.location.reload();
             }, 1000);
-    })
+    })//manejo de errores
         .catch(error => {
             console.error('Error:', error);
             form.querySelector('.message').textContent = 'Error al actualizar la bebida.';
         });
     });
 
-    // Evento de clic para el botón de eliminar
+    //evento de clic para el boton de eliminar
     document.getElementById('btnEliminar').addEventListener('click', function() {
         const codigo = form.codigo.value;
 
+        //se creo una confirmacion para mas seguridad y que no se elimine la informacion inmediatamente
         if (confirm('¿Estás seguro de que deseas eliminar esta bebida?')) {
             fetch(`/api/bebidacreate/${codigo}`, { method: 'DELETE' })
             .then(response => response.json())
             .then(data => {
-                // Mostrar mensaje de éxito o manejar errores
+                //Mostrar mensaje de exito o manejar errores
                 form.querySelector('.message').textContent = 'Bebida eliminada con éxito.';
-                // Actualizar la página después de un breve retraso para que el usuario pueda leer el mensaje
+                //Actualizar la pagina después de un breve retraso para que el usuario pueda leer el mensaje
             setTimeout(() => {
                 window.location.reload();
             }, 1000);
-            })
+            })//manejo de errores
             .catch(error => {
                 console.error('Error:', error);
                 form.querySelector('.message').textContent = 'Error al eliminar la bebida.';
