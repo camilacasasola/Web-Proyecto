@@ -23,39 +23,39 @@ exports.getComestible = async (req, res) => {
     }
 };
 
-//editar una bebida existente
-exports.actualizarBebida = async (req, res) => {
+//editar un comestible existente
+exports.actualizarComestible = async (req, res) => {
     try {
-        const codigo = req.params.codigo; //Obtener el código de la bebida de los parámetros de la solicitud
+        const codigocomestible = req.params.codigocomestible; //Obtener el código de la bebida de los parámetros de la solicitud
         const datosActualizados = req.body; //Obtener los datos editados de la solicitud
 
         //Buscar la bebida por su código y editarla en la base de datos
-        const bebidaActualizada = await ComestibleCreate.findOneAndUpdate(
-            { codigo: codigo }, //Filtro para encontrar la bebida por su código
+        const comestibleactualizado = await ComestibleCreate.findOneAndUpdate(
+            { codigocomestible: codigocomestible }, //Filtro para encontrar la bebida por su código
             datosActualizados, //Nuevos datos para actualizar
             { new: true } //Opcion para devolver la versinn actualizada de la bebida
         );
 
-        if (!bebidaActualizada) { //manejo de errores al no existir la bebida 
-            return res.status(404).json({ message: 'Bebida no encontrada' });
+        if (!comestibleactualizado) { //manejo de errores al no existir la bebida 
+            return res.status(404).json({ message: 'Comestible no encontrado' });
             //return res.send(`<script>alert('bebida no encontrada'); window.location.href = '/Datosdebebida.html';</script>`)
         }
 
         //Enviar la respuesta con la bebida actualizada
-        res.json(bebidaActualizada);
+        res.json(comestibleactualizado);
     } catch (error) {
         //Manejar cualquier error que ocurra durante la actualizacion
-        console.error('Error al actualizar la bebida, debe seleccionar una bebida antes:', error);
-        res.status(500).json({ message: 'Error al actualizar la bebida' });
+        console.error('Error al actualizar el comestible, debe seleccionar un comestible antes:', error);
+        res.status(500).json({ message: 'Error al actualizar el comestible' });
         //res.send(`<script>alert('Error al actualizar la bebida'); window.location.href = '/Datosdebebida.html';</script>`)
     }
 };
 //manejo para eliminar bebidas de la base de datos
-exports.eliminarBebida = async (req, res) => {
+exports.eliminarComestible = async (req, res) => {
     try {
-        const { codigo } = req.params;
-        await ComestibleCreate.findOneAndDelete({ codigo });
-        res.status(200).json('¡Bebida eliminada correctamente!');
+        const { codigocomestible } = req.params;
+        await ComestibleCreate.findOneAndDelete({ codigocomestible });
+        res.status(200).json('¡Comestible eliminada correctamente!');
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
