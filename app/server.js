@@ -78,6 +78,11 @@ const comestibleRoutes = require('./routes/comestiblecreate.js');
 //usar la ruta
 app.use('/api/createcomestible', comestibleRoutes);
 
+//ruta especia create
+const especialRoutes = require('./routes/especialcreate.js');
+//usar la ruta
+app.use('/api/createespecial', especialRoutes);
+
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
 //usar las rutes get
