@@ -26,12 +26,28 @@
       padding: 0 20px;
     }
     .container {
-      max-width: 500px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      max-width: 1500px;
       margin: 50px auto;
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .form-container{
+      margin: 20px;
+      flex-basis: 50%;
+    }
+    .table-container{
+      margin: 20px;
+      flex-basis: 70%;
+    }
+    .form-control{
+      width: 100%;
+      max-width: 520px;
     }
     .footer {
       background-color: #f8f9fa;
@@ -96,43 +112,67 @@
 
 
   <div class="container">
+    <div class="form-container">
     <h2 class="mb-4">Datos de Equipo</h2>
-    <form>
+    <form id="equipoform" action="/api/createequipo" method="post">
       <div class="form-group">
         <label for="codigoEquipo">Código de Equipo:</label>
-        <input type="number" class="form-control" id="codigoEquipo" placeholder="Ingrese el código del equipo">
+        <input name="codigoequipo" type="text" class="form-control" id="codigoEquipo" placeholder="Ingrese el código del equipo">
       </div>
       <div class="form-group">
         <label for="descripcionEquipo">Descripción de Equipo:</label>
-        <input type="text" class="form-control" id="descripcionEquipo" placeholder="Ingrese la descripción del equipo">
+        <input name="descripcionequipo" type="text" class="form-control" id="descripcionEquipo" placeholder="Ingrese la descripción del equipo">
       </div>
       <div class="form-group">
         <label for="cantidadEquipo">Cantidad de Equipo:</label>
-        <input type="number" class="form-control" id="cantidadEquipo" placeholder="Ingrese la cantidad del equipo">
+        <input name="cantidadequipo" type="text" class="form-control" id="cantidadEquipo" placeholder="Ingrese la cantidad del equipo">
       </div>
       <div class="form-group">
         <label for="codigoProveedor">Código de Proveedor:</label>
-        <input type="number" class="form-control" id="codigoProveedor" placeholder="Ingrese el código del proveedor">
+        <input name="codigoproveedor" type="text" class="form-control" id="codigoProveedor" placeholder="Ingrese el código del proveedor">
       </div>
       <div class="form-group">
         <label for="codigoRestaurante">Código de Restaurante:</label>
-        <input type="number" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código del restaurante">
+        <input name="codigorestaurante" type="text" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código del restaurante">
+        <div class="message"></div>
       </div>
       <div class="row">
         <div class="col">
           <button type="submit" class="btn btn-primary btn-block">Guardar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-danger btn-block">Eliminar</button>
+          <button id="btneliminar" type="button" class="btn btn-danger btn-block">Eliminar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-warning btn-block">Editar</button>
+          <button id="btneditar" type="button" class="btn btn-warning btn-block">Editar</button>
         </div>
         <div class="col">
           <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
         </div>
       </div>
     </form>
+  </div>
+<!-- Contenedor para la tabla de bebidas -->
+<div class="table-container">
+  <h2 class="mb-4">Equipos Registrados</h2>
+  <div class="table-responsive">
+    <table class="table table-striped" id="tablaequipo">
+      <thead>
+        <tr>
+          <th>Código del Equipo</th>
+          <th>Descripción del Equipo</th>
+          <th>Cantidad del Equipo</th>
+          <th>Código de Proveedor</th>
+          <th>Código de Restaurante</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los datos de las bebidas se insertarán aquí mediante JavaScript -->
+      </tbody>
+    </table>
+   </div>
+   </div>
+
   </div>
 
   <div class="footer">
@@ -143,5 +183,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/app/GetColecciones/equipocreateget.js"></script>
 </body>
 </html>

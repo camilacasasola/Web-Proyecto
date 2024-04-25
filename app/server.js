@@ -83,6 +83,12 @@ const especialRoutes = require('./routes/especialcreate.js');
 //usar la ruta
 app.use('/api/createespecial', especialRoutes);
 
+//ruta equipocreate
+const equipoRoutes = require('./routes/equipocreate.js');
+//usar la ruta
+app.use('/api/createequipo', equipoRoutes);
+
+
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
 //usar las rutes get
