@@ -88,6 +88,11 @@ const equipoRoutes = require('./routes/equipocreate.js');
 //usar la ruta
 app.use('/api/createequipo', equipoRoutes);
 
+//ruta limpieza
+const limpiezaRoutes = require('./routes/limpezacreate.js');
+//usar la ruta
+app.use('/api/createlimpieza', limpiezaRoutes);
+
 
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
