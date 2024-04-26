@@ -8,7 +8,7 @@ const TecnologiaSchema = new mongoose.Schema({
   codigorestaurante: { type: String, required: true },
   codigomarca: { type: String, required: true },
   descripciontecnologia: { type: String, required: true },
-  codigoproveedor: { type: String, required: true },
+  codigoproveedor: { type: String, required: true }
 });
 //con esto se crea la coleccion en mongo y se establece el nombre con el que se quiere crear
 //y se exporta directamente para que el modulo pueda ser utilizado en otros archivos
