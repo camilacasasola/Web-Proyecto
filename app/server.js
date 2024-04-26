@@ -38,9 +38,7 @@ app.use(express.json())
 //Middleware(objetos req y res) para cors
 app.use(cors())
 
-// Rutas para el manejo de loginadmin
-const authRoutes = require('./routes/loginadmin.js');
-app.use('/api/auth', authRoutes);
+
 //ejecuta la conexion
 //connect()
 //app.use(restaurant)
@@ -51,9 +49,24 @@ app.use('/api/auth', authRoutes);
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'..', 'Diseno web 1', 'home 1.html'));//aca va '..'
 });
+
+//ruta registroclientes
+const registroClienteRoutes = require('./routes/registrocliente');
+// Middleware para las rutas del registro de clientes
+app.use('/api/registrocliente', registroClienteRoutes);
+
 const loginClienteRoutes = require('./routes/logincliente');
 // Usar rutas
 app.use('/', loginClienteRoutes);
+
+//ruta para registro admin
+const adminRoutes = require('./routes/registroadmin.js');
+//usar la ruta
+app.use('/api/admin/registro', adminRoutes);
+
+// Rutas para el manejo de loginadmin
+const authRoutes = require('./routes/loginadmin.js');
+app.use('/api/auth/login', authRoutes);
 
 //Sirve los archivos estaticos desde la carpeta y asegura que la ruta sea correcta
 app.use(express.static(path.join(__dirname, '..', 'Diseno web 1')));//aca va '..'
@@ -62,11 +75,6 @@ app.use(express.static(path.join(__dirname, '..', 'Diseno web 1')));//aca va '..
 const home1Routes = require('./routes/home1'); // No necesitas '.js'
 // Usa el router 'menu'
 app.use('/home1', home1Routes);
-
-//ruta registroclientes
-const registroClienteRoutes = require('./routes/registrocliente');
-// Middleware para las rutas del registro de clientes
-app.use('/api/registrocliente', registroClienteRoutes);
 
 //ruta createbebidas
 const bebidaRoutes = require('./routes/bebidacreate');
