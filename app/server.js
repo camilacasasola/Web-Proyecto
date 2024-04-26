@@ -93,6 +93,11 @@ const limpiezaRoutes = require('./routes/limpezacreate.js');
 //usar la ruta
 app.use('/api/createlimpieza', limpiezaRoutes);
 
+//ruta marca
+const marcaRoutes = require('./routes/marcacreate.js');
+//usar la ruta
+app.use('/api/createmarca', marcaRoutes);
+
 
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
