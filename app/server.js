@@ -108,6 +108,11 @@ const mesaRoutes = require('./routes/mesacreate.js');
 //usar la ruta
 app.use('/api/createmesa', mesaRoutes);
 
+//ruta platillo
+const platilloRoutes = require('./routes/platillocreate.js');
+//usar ruta
+app.use('/api/createplatillo', platilloRoutes);
+
 
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
