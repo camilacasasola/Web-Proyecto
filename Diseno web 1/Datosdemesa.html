@@ -26,12 +26,28 @@
       padding: 0 20px;
     }
     .container {
-      max-width: 500px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      max-width: 1500px;
       margin: 50px auto;
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .form-container{
+      margin: 20px;
+      flex-basis: 50%;
+    }
+    .table-container{
+      margin: 20px;
+      flex-basis: 70%;
+    }
+    .form-control{
+      width: 100%;
+      max-width: 520px;
     }
     .footer {
       background-color: #f8f9fa;
@@ -94,43 +110,67 @@
   </nav>
 
   <div class="container">
+    <div class="form-container">
     <h2 class="mb-4">Datos de Mesa</h2>
-    <form>
+    <form id="mesaform" action="/api/createmesa" method="post">
       <div class="form-group">
         <label for="codigoMesa">Código de Mesa:</label>
-        <input type="number" class="form-control" id="codigoMesa" placeholder="Ingrese el código de mesa">
+        <input name="codigomesa" type="text" class="form-control" id="codigoMesa" placeholder="Ingrese el código de mesa">
       </div>
       <div class="form-group">
         <label for="nombreMesa">Nombre de Mesa:</label>
-        <input type="text" class="form-control" id="nombreMesa" placeholder="Ingrese el nombre de mesa">
+        <input name="nombremesa" type="text" class="form-control" id="nombreMesa" placeholder="Ingrese el nombre de mesa">
       </div>
       <div class="form-group">
         <label for="numeroMesa">Número de Mesa:</label>
-        <input type="number" class="form-control" id="numeroMesa" placeholder="Ingrese el número de mesa">
+        <input name="numeromesa" type="text" class="form-control" id="numeroMesa" placeholder="Ingrese el número de mesa">
       </div>
       <div class="form-group">
         <label for="codigoRestaurante">Código de Restaurante:</label>
-        <input type="number" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código de restaurante">
+        <input name="codigorestaurante" type="text" class="form-control" id="codigoRestaurante" placeholder="Ingrese el código de restaurante">
       </div>
       <div class="form-group">
         <label for="cantidadSillasMesa">Cantidad de Sillas de Mesa:</label>
-        <input type="number" class="form-control" id="cantidadSillasMesa" placeholder="Ingrese la cantidad de sillas de mesa">
+        <input name="cantidadsillas" type="text" class="form-control" id="cantidadSillasMesa" placeholder="Ingrese la cantidad de sillas de mesa">
+        <div class="message"></div>
       </div>
       <div class="row">
         <div class="col">
           <button type="submit" class="btn btn-primary btn-block">Guardar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-danger btn-block">Eliminar</button>
+          <button id="btneliminar" type="button" class="btn btn-danger btn-block">Eliminar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-warning btn-block">Editar</button>
+          <button id="btneditar" type="button" class="btn btn-warning btn-block">Editar</button>
         </div>
         <div class="col">
           <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
         </div>
       </div>
     </form>
+  </div>
+
+<!-- Contenedor para la tabla de bebidas -->
+<div class="table-container">
+  <h2 class="mb-4">Equipos Registrados</h2>
+  <div class="table-responsive">
+    <table class="table table-striped" id="tablamesa">
+      <thead>
+        <tr>
+          <th>Código de la mesa</th>
+          <th>Nombre de la mesa</th>
+          <th>Número de mesa</th>
+          <th>Código de Restaurante</th>
+          <th>Cantidad de sillas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los datos de las bebidas se insertarán aquí mediante JavaScript -->
+      </tbody>
+    </table>
+   </div>
+   </div>
   </div>
 
   <div class="footer">
@@ -141,5 +181,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/app/GetColecciones/mesacreateget.js"></script>
 </body>
 </html>

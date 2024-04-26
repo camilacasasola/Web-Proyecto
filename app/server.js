@@ -100,7 +100,13 @@ app.use('/api/createmarca', marcaRoutes);
 
 //ruta medida 
 const medidaRoutes = require('./routes/medidacreate.js');
+//usar ruta
 app.use('/api/createmedida', medidaRoutes);
+
+//ruta mesa
+const mesaRoutes = require('./routes/mesacreate.js');
+//usar la ruta
+app.use('/api/createmesa', mesaRoutes);
 
 
 //ruta para get de bebidas
