@@ -113,6 +113,11 @@ const platilloRoutes = require('./routes/platillocreate.js');
 //usar ruta
 app.use('/api/createplatillo', platilloRoutes);
 
+//ruta tecnologia 
+const tecnologiaRoute = require('./routes/tecnologiacreate.js');
+//usar la ruta
+app.use('/api/createtecnologia', tecnologiaRoute);
+
 
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');

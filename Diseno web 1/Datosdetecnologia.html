@@ -26,12 +26,28 @@
       padding: 0 20px;
     }
     .container {
-      max-width: 500px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      max-width: 1500px;
       margin: 50px auto;
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .form-container{
+      margin: 20px;
+      flex-basis: 50%;
+    }
+    .table-container{
+      margin: 20px;
+      flex-basis: 70%;
+    }
+    .form-control{
+      width: 100%;
+      max-width: 520px;
     }
     .footer {
       background-color: #f8f9fa;
@@ -95,43 +111,67 @@
   </nav>
 
   <div class="container">
+    <div class="form-container">
     <h2 class="mb-4">Datos de Tecnología</h2>
-    <form>
+    <form id="tecnologiaform" action="/api/createtecnologia" method="post">
       <div class="form-group">
         <label for="CodigoTecnologia">Código de Tecnología:</label>
-        <input type="number" class="form-control" id="CodigoTecnologia" placeholder="Ingrese el código de tecnología">
+        <input name="codigotecnologia" type="text" class="form-control" id="CodigoTecnologia" placeholder="Ingrese el código de tecnología">
       </div>
       <div class="form-group">
         <label for="CodigoRestaurante">Código de Restaurante:</label>
-        <input type="number" class="form-control" id="CodigoRestaurante" placeholder="Ingrese el código de restaurante">
+        <input name="codigorestaurante" type="text" class="form-control" id="CodigoRestaurante" placeholder="Ingrese el código de restaurante">
       </div>
       <div class="form-group">
         <label for="CodigoMarca">Código de Marca:</label>
-        <input type="number" class="form-control" id="CodigoMarca" placeholder="Ingrese el código de marca">
+        <input name="codigomarca" type="text" class="form-control" id="CodigoMarca" placeholder="Ingrese el código de marca">
       </div>
       <div class="form-group">
         <label for="DescripcionTecnologia">Descripción de Tecnología:</label>
-        <input type="text" class="form-control" id="DescripcionTecnologia" placeholder="Ingrese la descripción de tecnología">
+        <input name="descripciontecnologia" type="text" class="form-control" id="DescripcionTecnologia" placeholder="Ingrese la descripción de tecnología">
       </div>
       <div class="form-group">
         <label for="CodigoProveedor">Código de Proveedor:</label>
-        <input type="number" class="form-control" id="CodigoProveedor" placeholder="Ingrese el código de proveedor">
+        <input name="codigoproveedor" type="text" class="form-control" id="CodigoProveedor" placeholder="Ingrese el código de proveedor">
+        <div class="message"></div>
       </div>
       <div class="row">
         <div class="col">
           <button type="submit" class="btn btn-primary btn-block">Guardar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-danger btn-block">Eliminar</button>
+          <button id="btneliminar" type="button" class="btn btn-danger btn-block">Eliminar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-warning btn-block">Editar</button>
+          <button id="btneditar" type="button" class="btn btn-warning btn-block">Editar</button>
         </div>
         <div class="col">
           <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
         </div>
       </div>
     </form>
+  </div>
+
+    <!-- Contenedor para la tabla de bebidas -->
+<div class="table-container">
+  <h2 class="mb-4">Tecnologia Registrados</h2>
+  <div class="table-responsive">
+    <table class="table table-striped" id="tablatecnologia">
+      <thead>
+        <tr>
+          <th>Código de Tecnología</th>
+          <th>Código de Restaurante</th>
+          <th>Código de Marca</th>
+          <th>Descripción de Tecnología</th>
+          <th>Código del Proveedor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los datos de las bebidas se insertarán aquí mediante JavaScript -->
+      </tbody>
+    </table>
+   </div>
+   </div>
   </div>
 
   <div class="footer">
@@ -142,5 +182,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/app/GetColecciones/tecnologiacreateget.js"></script>
 </body>
 </html>
