@@ -98,6 +98,10 @@ const marcaRoutes = require('./routes/marcacreate.js');
 //usar la ruta
 app.use('/api/createmarca', marcaRoutes);
 
+//ruta medida 
+const medidaRoutes = require('./routes/medidacreate.js');
+app.use('/api/createmedida', medidaRoutes);
+
 
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
