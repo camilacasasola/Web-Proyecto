@@ -31,4 +31,17 @@ const registerUserController = async (req, res) => {
   }
 };
 
-module.exports = { registerUserController };
+//mostras loa comestibles agregadas a mongo aca quede solo hice el post
+const getAdmin = async (req, res) => {
+  try {
+      const admin = await User.find();
+      res.json(admin);
+  } catch (error) {
+      res.status(500).json({ message: "Error al obtener los administradores: " + error.message });
+  }
+};
+
+module.exports = { 
+  registerUserController,
+  getAdmin 
+};

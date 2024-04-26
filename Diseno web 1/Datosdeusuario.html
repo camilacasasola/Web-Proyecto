@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datos de Usuario</title>
+  <title>Datos de Usuario Administrativo</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome para los iconos -->
@@ -26,12 +26,28 @@
       padding: 0 20px;
     }
     .container {
-      max-width: 500px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      max-width: 800px;
       margin: 50px auto;
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .form-container{
+      margin: 20px;
+      flex-basis: 50%;
+    }
+    .table-container{
+      margin: 20px;
+      flex-basis: 70%;
+    }
+    .form-control{
+      width: 100%;
+      max-width: 520px;
     }
     .footer {
       background-color: #f8f9fa;
@@ -83,8 +99,9 @@
     </div>
   </nav>
   <div class="container">
-    <h2 class="mb-4">Datos de Usuario</h2>
-    <form>
+    <div class="form-container">
+    <h2 class="mb-4">Datos de Usuario Administrativo</h2>
+    <form id="adminform" action="/api/get/admin" method="post">
       <div class="form-group">
         <label for="codigoUsuario">Correo de Usuario:</label>
         <input type="text" class="form-control" id="codigoUsuario" placeholder="Ingrese el correo del usuario">
@@ -96,6 +113,7 @@
       <div class="form-group">
         <label for="contrasenaAnterior">Contraseña Anterior:</label>
         <input type="password" class="form-control" id="contrasenaAnterior" placeholder="Ingrese la nueva contraseña">
+        <div class="message"></div>
       </div>
       <div class="row">
         <div class="col">
@@ -113,6 +131,23 @@
       </div>
     </form>
   </div>
+<!-- Contenedor para la tabla de bebidas -->
+<div class="table-container">
+  <h2 class="mb-4">Administradores Registrados</h2>
+  <div class="table-responsive">
+    <table class="table table-striped" id="tablaadmin">
+      <thead>
+        <tr>
+          <th>Correo del usuario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los datos de las bebidas se insertarán aquí mediante JavaScript -->
+      </tbody>
+    </table>
+   </div>
+   </div>
+  </div>
 
   <div class="footer">
     © 2024 Luna Restaurantes. Todos los derechos reservados.
@@ -122,5 +157,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/app//GetColecciones/registroadminget.js"></script>
 </body>
 </html>
