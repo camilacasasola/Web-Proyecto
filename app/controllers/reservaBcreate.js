@@ -15,7 +15,7 @@ exports.createReservaB = async (req, res) => {
       let mensajeError = 'Ocurrió un error al procesar su reservacion, Intente nuevamente.';
       // Verificar si el error es debido a una violación del índice único
       if (error.code === 11000) {
-        mensajeError = 'Ya existe una reservacion con la misma fecha y hora. Por favor, elija un horario diferente.';
+        mensajeError = 'Ya existe una reservacion con esa fecha y hora para el numero de mesa indicado. Por favor, elija un horario diferente o cambie de mesa..';
       }
       res.send(`<script>alert('${mensajeError}'); window.location.href = '/ReservaB.html';</script>`);
     }

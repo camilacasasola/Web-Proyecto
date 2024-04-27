@@ -7,7 +7,7 @@ const reservaBSchema = new mongoose.Schema({
   numeromesa: { type: Number, required: true }
 });
 //indice unico para reserva
-reservaBSchema.index({ fecha: 1, hora: 1 }, { unique: true });
+reservaBSchema.index({ fecha: 1, hora: 1, numeromesa: 1 }, { unique: true });
 
 module.exports = mongoose.model('RestauranteB', reservaBSchema);
 
