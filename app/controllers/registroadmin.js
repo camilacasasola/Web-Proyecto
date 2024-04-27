@@ -8,7 +8,8 @@ const registerUserController = async (req, res) => {
     // Verificar si ya existe un usuario con ese nombre
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.status(409).send('<p>Usuario ya registrado.</p>'); // Conflicto
+      res.send(`<script>alert('Usario ya registrado, inserte un nombre de usuario diferente!!!'); window.location.href = '/UsuarioAdmin.html';</script>`);
+      return;
     }
 
     // Crear un nuevo usuario
@@ -18,7 +19,8 @@ const registerUserController = async (req, res) => {
     await newUser.save();
 
     // Confirmar el registro
-    res.status(201).send('<p>Usuario registrado con éxito.</p>');
+    res.send(`<script>alert('Usuario registrado exitosamente!!!'); window.location.href = '/UsuarioAdmin.html';</script>`);
+      return;
   } catch (error) {
     console.error('Error al registrar el usuario:', error);
     res.status(500).send('<p>Error en el servidor durante el registro.</p>');
