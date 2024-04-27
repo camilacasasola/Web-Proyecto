@@ -29,9 +29,6 @@ exports.actualizarContrasena = async (req, res) => {
   
       // Respuesta exitosa
       res.status(200).send('Contraseña actualizada correctamente');
-      setTimeout(() => {
-        window.location.reload();
-    }, 1000);
     } catch (error) {
       console.error('Error al actualizar la contraseña:', error);
       res.status(500).send('Error al actualizar la contraseña en el servidor');

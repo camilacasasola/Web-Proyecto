@@ -131,6 +131,11 @@ const tecnologiaRoute = require('./routes/tecnologiacreate.js');
 //usar la ruta
 app.use('/api/createtecnologia', tecnologiaRoute);
 
+//ruta para la reserva A
+const reservaARoute = require('./routes/reservaAcreate.js');
+//usar la ruta
+app.use('/api/reservaA', reservaARoute)
+
 
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');

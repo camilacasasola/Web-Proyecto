@@ -78,6 +78,9 @@ document.getElementById('adminform').addEventListener('submit', async (event) =>
       const data = await response.text();
       console.log('Respuesta recibida:', data);
       document.querySelector('.message').textContent = 'Contraseña actualizada con éxito.';
+      setTimeout(() => {
+        window.location.reload();
+    }, 1000);
     } catch (error) {
       console.error('Error:', error);
       document.querySelector('.message').textContent = 'Error al actualizar la contraseña: ' + error.message;
