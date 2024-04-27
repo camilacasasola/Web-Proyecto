@@ -71,7 +71,7 @@
 <body>
   <div class="header">
     <div>Luna Restaurantes</div>
-    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+    <button id="cerrar" class="btn btn-danger"><i class="fas fa-times"></i></button>
   </div>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -138,6 +138,19 @@
   <div class="footer">
     © 2024 Luna Restaurantes. Todos los derechos reservados.
   </div>
+</div>
+<script>
+  // Obtén el botón por su ID
+  var boton = document.getElementById("cerrar");
+
+  // Agrega un listener para el evento 'click'
+  boton.addEventListener("click", function() {
+      // Define la ubicación a la que quieres redirigir
+      var ubicacion = "home 1.html";
+      // Redirige a la nueva ubicación
+      window.location.href = ubicacion;
+  });
+</script>
 
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

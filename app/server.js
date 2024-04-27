@@ -146,6 +146,16 @@ const reservaCRoutes = require('./routes/reservaCcreate.js');
 //usar la ruta
 app.use('/api/reservaC', reservaCRoutes);
 
+//ruta de productos
+const productoRoutes = require('./routes/productocreate.js');
+//usar la ruta
+app.use('/api/createproducto', productoRoutes);
+
+//ruta restaurantes
+const resRoutes = require('./routes/restaurantecreate.js');
+//usar la ruta
+app.use('/api/createres', resRoutes);
+
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
 //usar las rutes get
