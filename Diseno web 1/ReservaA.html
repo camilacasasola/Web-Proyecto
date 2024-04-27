@@ -42,6 +42,7 @@
       width: 100%;
     }
     .container {
+      max-width: 1500px;
       display: flex;
       justify-content: space-between; /* Alineación de los elementos */
       align-items: flex-start;
@@ -129,20 +130,14 @@
       <table class="table" id="reservasA">
         <thead>
           <tr>
-            <th scope="col">Fecha</th>
-            <th scope="col">Hora</th>
-            <th scope="col">Nombre Restaurante</th>
-            <th scope="col">Número de Mesa</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Nombre del restaurante</th>
+          <th>Numero de Mesa</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>10/10/2024</td>
-            <td>10:00</td>
-            <td>001</td>
-            <td>1</td>
-          </tr>
-          <!-- Agrega más filas según sea necesario -->
+          <!-- Los datos de las bebidas se insertarán aquí mediante JavaScript -->
         </tbody>
       </table>
     </div>
@@ -156,5 +151,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/app/GetColecciones/reservaAcreateget.js"></script>
 </body>
 </html>

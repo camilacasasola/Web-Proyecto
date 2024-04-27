@@ -9,7 +9,7 @@ exports.addEquipo = async (req, res) => {
     res.send(`<script>alert('${mensaje}'); window.location.href = '/Datosdeequipo.html';</script>`);
     //res.status(201).json(newBebida);
   } catch (error) {
-    res.send(`<script>alert('Debe completar todos los campos para agregar un nuevo Equipo o no trate de insertar Equipo ya existentes'); window.location.href = '/Datosdeequipo.html';</script>`)
+    res.send(`<script>alert('Debe completar todos los campos para agregar un nuevo Equipo o no trate de insertar Equipo ya existentes'); window.location.href = '/Datosdeequipo.html';</script>`);
     //res.status(400).json({ message: error.message });
   }
 };
