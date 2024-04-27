@@ -4,6 +4,8 @@ exports.createReservaC = async (req, res) => {
     try {
       const nuevaReserva = new ReservaC({
         fecha: req.body.fecha,
+        nombre: req.body.nombre,
+        telefono: req.body.telefono,
         hora: req.body.hora,
         nombrerestaurante: req.body.nombrerestaurante,
         numeromesa: req.body.numeromesa

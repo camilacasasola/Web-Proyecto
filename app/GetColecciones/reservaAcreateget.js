@@ -18,9 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
         reservas.forEach(reserva => {
           const row = tableBody.insertRow();
           row.insertCell(0).textContent = reserva.fecha.split('T')[0];
-          row.insertCell(1).textContent = reserva.hora;
-          row.insertCell(2).textContent = reserva.nombrerestaurante;
-          row.insertCell(3).textContent = reserva.numeromesa;
+          row.insertCell(1).textContent = reserva.nombre;
+          row.insertCell(2).textContent = reserva.telefono;
+          row.insertCell(3).textContent = reserva.hora;
+          row.insertCell(4).textContent = reserva.nombrerestaurante;
+          row.insertCell(5).textContent = reserva.numeromesa;
         });
       })
       .catch(error => console.error('Error al cargar las reservas:', error));
