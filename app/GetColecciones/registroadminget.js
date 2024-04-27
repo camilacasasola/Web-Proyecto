@@ -16,10 +16,17 @@ fetch('/api/admin/registro')
 document.addEventListener('DOMContentLoaded', () => {
     const table = document.getElementById('tablaadmin');
     const form = document.getElementById('adminform');
+    const usernameinput = form.querySelector('input[name="username"]');
     const messageContainer = form.querySelector('.message');
      //Evento de click para todas las filas de la tabla
      //esta seccion sirve para traer la informacion que form y mediante 
      //el click poder seleccionar la linea de la tabla y mandar la informacion de la tabla al form de vuelta
+     // Verificar si los elementos existen
+    if (!table || !form || !usernameinput || !messageContainer) {
+        console.error('Algunos elementos del DOM no están disponibles');
+        return;
+    }
+    
      table.addEventListener('click', function(event) {
         let target = event.target;
         while (target && target.nodeName !== "TR") {
@@ -27,64 +34,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (target && target.nodeName === "TR") { // Hemos encontrado la fila en la que se hizo clic
             const cells = target.getElementsByTagName('td');
-            form.username.value = cells[0].textContent;
-    
-            //Limpia cualquier mensaje previo
+            usernameinput.value = cells[0].textContent;
+            sessionStorage.setItem('selectedusername', cells[0].textContent);
             if (messageContainer) messageContainer.textContent = '';
+            // Recargar la página después de un breve retraso
+        setTimeout(() => {
+          window.location.reload();
+      }, 1000);
         }
     });
- //Evento de clic para el botón de editar y poder actualizar y guardar cambios
- document.getElementById('btneditar').addEventListener('click', function() {
-    const adminData = {
-        username: form.username.value,
-    };
 
-    //llamada fetch para actualizar (PUT) la bebida
-    //la ruta del html se hace el llamado para acceder a la informacion
-    //mediante el uso del PUT se hace el update
-    fetch(`/api/admin/registro/${adminData.username}`, {
+    //por si se navega o se actualiza
+    const selectedusername =  sessionStorage.getItem('selectedusername');
+    if (selectedusername){
+        usernameinput.value = selectedusername;
+    }
+    const username = sessionStorage.getItem('selectedusername');
+console.log('Username almacenado en sessionStorage:', username);
+
+
+//Evento de clic para el botón de editar y poder actualizar y guardar cambios
+// Evento de clic para el botón de editar y poder actualizar y guardar cambios
+document.getElementById('adminform').addEventListener('submit', async (event) => {
+    event.preventDefault();
+  
+    const username = document.getElementById('codigoUsuario').value;
+    const currentPassword = document.getElementById('contrasenaActual').value;
+    const newPassword = document.getElementById('contrasenaNueva').value;
+  
+    try {
+      const response = await fetch(`/api/get/registro/${username}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(adminData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        //se muestra mensaje de exito o manejar errores
-        form.querySelector('.message').textContent = 'Contraseña actualizada con éxito.';
-        //Actualizar la pagina despues de un breve retraso para que el usuario pueda leer el mensaje de exito 
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
-})//manejo de errores
-    .catch(error => {
-        console.error('Error:', error);
-        form.querySelector('.message').textContent = 'Error al actualizar la Contraseña.';
-    });
-});
-
-//evento de clic para el boton de eliminar
-document.getElementById('btneliminar').addEventListener('click', function() {
-    const username = form.username.value;
-
-    //se creo una confirmacion para mas seguridad y que no se elimine la informacion inmediatamente
-    if (confirm('¿Estás seguro de que deseas eliminar la marca?')) {
-        fetch(`/api/admin/registro/${username}`, { method: 'DELETE' })
-        .then(response => response.json())
-        .then(data => {
-            //Mostrar mensaje de exito o manejar errores
-            form.querySelector('.message').textContent = 'Admin eliminado con éxito.';
-            //Actualizar la pagina después de un breve retraso para que el usuario pueda leer el mensaje
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
-        })//manejo de errores
-        .catch(error => {
-            console.error('Error:', error);
-            form.querySelector('.message').textContent = 'Error al eliminar el administrador.';
-        });
+        body: JSON.stringify({ password: currentPassword, newpassword: newPassword }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Error en la respuesta del servidor');
+      }
+  
+      const data = await response.text();
+      console.log('Respuesta recibida:', data);
+      document.querySelector('.message').textContent = 'Contraseña actualizada con éxito.';
+    } catch (error) {
+      console.error('Error:', error);
+      document.querySelector('.message').textContent = 'Error al actualizar la contraseña: ' + error.message;
     }
-});
-
+  });
+  
 });

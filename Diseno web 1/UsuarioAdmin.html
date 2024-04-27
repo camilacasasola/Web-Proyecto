@@ -84,7 +84,7 @@
   </nav>
   <div class="container">
     <h2 class="mb-4">Crear Usuario</h2>
-    <form action="/api/admin/registro" method="post">
+    <form id="registroform" action="/api/admin/registro" method="post">
       <div class="form-group">
         <label for="codigoUsuario">Correo del Usuario:</label>
         <input name="username" type="text" class="form-control" id="codigoUsuario" placeholder="Ingrese el correo del Administrador">
@@ -92,6 +92,7 @@
       <div class="form-group">
         <label for="codigoUsuario">Contraseña del Usuario:</label>
         <input name="password" type="password" class="form-control" id="passwordUsuario" placeholder="Ingrese la contraseña del Administrador">
+        <div class="message"></div>
       </div>
       <div class="row">
         <div class="col">

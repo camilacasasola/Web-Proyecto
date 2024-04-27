@@ -64,6 +64,11 @@ const adminRoutes = require('./routes/registroadmin.js');
 //usar la ruta
 app.use('/api/admin/registro', adminRoutes);
 
+//ruta reset password
+const resetAdminRoutes = require('./routes/resetpassadmin.js');
+//usar la ruta
+app.use('/api/get/registro', resetAdminRoutes);
+
 // Rutas para el manejo de loginadmin
 const authRoutes = require('./routes/loginadmin.js');
 app.use('/api/auth/login', authRoutes);

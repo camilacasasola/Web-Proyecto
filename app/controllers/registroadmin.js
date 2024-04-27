@@ -11,14 +11,8 @@ const registerUserController = async (req, res) => {
       return res.status(409).send('<p>Usuario ya registrado.</p>'); // Conflicto
     }
 
-    // Hashear la contraseña
-    const hashedPassword = await bcrypt.hash(password, 8);
-
-    // Crear nuevo usuario
-    const newUser = new User({
-      username,
-      password: hashedPassword
-    });
+    // Crear un nuevo usuario
+    const newUser = new User({ username, password }); // Asignamos la contraseña tal cual
 
     // Guardar el usuario en la base de datos
     await newUser.save();
@@ -43,5 +37,7 @@ const getAdmin = async (req, res) => {
 
 module.exports = { 
   registerUserController,
-  getAdmin 
+  getAdmin
 };
+
+

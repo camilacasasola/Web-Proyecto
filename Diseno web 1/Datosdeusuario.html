@@ -101,32 +101,26 @@
   <div class="container">
     <div class="form-container">
     <h2 class="mb-4">Datos de Usuario Administrativo</h2>
-    <form id="adminform" action="/api/get/admin" method="post">
+    <form id="adminform" action="/api/get/registro" method="post">
       <div class="form-group">
         <label for="codigoUsuario">Correo de Usuario:</label>
-        <input type="text" class="form-control" id="codigoUsuario" placeholder="Ingrese el correo del usuario">
+        <input name="username" type="text" class="form-control" id="codigoUsuario" placeholder="Ingrese el correo del usuario">
       </div>
       <div class="form-group">
         <label for="contrasenaActual">Contraseña Actual:</label>
-        <input type="password" class="form-control" id="contrasenaActual" placeholder="Ingrese la contraseña actual">
+        <input name="contrasenaActual" type="password" class="form-control" id="contrasenaActual" placeholder="Ingrese la contraseña actual">
       </div>
       <div class="form-group">
-        <label for="contrasenaAnterior">Contraseña Anterior:</label>
-        <input type="password" class="form-control" id="contrasenaAnterior" placeholder="Ingrese la nueva contraseña">
+        <label for="contrasenaAnterior">Contraseña Nueva:</label>
+        <input name="newpassword" type="password" class="form-control" id="contrasenaNueva" placeholder="Ingrese la nueva contraseña">
         <div class="message"></div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="submit" class="btn btn-primary btn-block">Guardar</button>
-        </div>
-        <div class="col">
           <button type="button" class="btn btn-danger btn-block">Eliminar</button>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-warning btn-block">Editar</button>
-        </div>
-        <div class="col">
-          <a href="Busqueda.html" class="btn btn-info btn-block">Reporte</a>
+          <button id="btneditar" type="submit" class="btn btn-warning btn-block">Cambiar</button>
         </div>
       </div>
     </form>
@@ -158,5 +152,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="/app//GetColecciones/registroadminget.js"></script>
+
 </body>
 </html>
