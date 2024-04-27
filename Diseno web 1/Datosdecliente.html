@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datos del Cliente</title>
+  <title>Sección de Búsqueda de Reservas</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome para los iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <style>
-    body {
+  body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
     }
     .header {
       width: 100%;
@@ -25,78 +24,78 @@
       align-items: center;
       padding: 0 20px;
     }
-    .container {
-      max-width: 500px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    .navbar {
+      background-color: #f8f9fa;
+      padding: 10px 0;
     }
+    .navbar-nav .nav-link {
+      color: #2b79c2;
+      font-weight: bold;
+    }
+
     .footer {
       background-color: #f8f9fa;
       text-align: center;
       padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
+
   </style>
 </head>
 <body>
-
   <div class="header">
-    <div>
-      <a href="#"><i class="fas fa-home fa-lg text-white mr-2"></i></a>
-      Luna Restaurantes
-    </div>
-    <a href="home.html"  class="btn btn-danger"><i class="fas fa-times"></i></a>
+    <div>Luna Restaurantes</div>
+    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
   </div>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="Menu.html">Menu</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BusquedarestA.html">Restaurante A</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BusquedarestB.html">Restaurante B</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BusquedarestC.html">Restaurante C</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-  <li class="nav-item">
-    <a class="nav-link" href="Datosdecliente.html">Cliente</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="Datosdecargo.html">Cargo</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="Datosdetransaccion.html">Transaccion</a>
-  </li>
-</ul>
-</div>
-</nav>
-  <div class="container">
-    <h2 class="mb-4">Datos del Cliente</h2>
-    <form>
-      <div class="form-group">
-        <label for="codigoCliente">Código de Cliente:</label>
-        <input type="number" class="form-control" id="codigoCliente" placeholder="Ingrese el código del cliente">
-      </div>
-      <div class="form-group">
-        <label for="nombreCliente">Nombre de Cliente:</label>
-        <input type="text" class="form-control" id="nombreCliente" placeholder="Ingrese el nombre del cliente">
-      </div>
-      <div class="form-group">
-        <label for="montoPagadoCliente">Monto Pagado por Cliente:</label>
-        <input type="number" class="form-control" id="montoPagadoCliente" placeholder="Ingrese el monto pagado por el cliente">
-      </div>
-      <div class="row">
-        <div class="col">
-          <button type="submit" class="btn btn-primary btn-block">Guardar</button>
-        </div>
-        <div class="col">
-          <button type="button" class="btn btn-danger btn-block">Eliminar</button>
-        </div>
-        <div class="col">
-          <button type="button" class="btn btn-warning btn-block">Editar</button>
-        </div>
-      </div>
 
-    </form>
+  <div class="search-section">
+    <h2>Sección de Búsqueda de Consultas</h2>
+    
+
+    <div class="search-results">
+      <h3>Resultados de la búsqueda:</h3>
+      <label for="filtro-reservas">Filtrar por fecha:</label><br>
+      <input type="date" id="filtro-consultas" name="filtro-consultas">
+      <table class="table" id="consultas">
+        <thead>
+          <tr>
+          <th>Fecha</th>
+          <th>Nombre Completo</th>
+          <th>Telefono</th>
+          <th>Hora</th>
+          <th>Correo</th>
+          <th>Consulta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- se agrega desde el js -->
+        </tbody>
+      </table>
+    </div>
   </div>
+
 
   <div class="footer">
     © 2024 Luna Restaurantes. Todos los derechos reservados.
@@ -106,5 +105,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/app/GetColecciones/consultacreateget.js"></script>
 </body>
 </html>

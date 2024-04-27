@@ -156,6 +156,11 @@ const resRoutes = require('./routes/restaurantecreate.js');
 //usar la ruta
 app.use('/api/createres', resRoutes);
 
+//ruta para consultas de clientes
+const consultaRoutes = require('./routes/consultacreate.js');
+//usar la ruta
+app.use('/api/createconsulta', consultaRoutes);
+
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
 //usar las rutes get
