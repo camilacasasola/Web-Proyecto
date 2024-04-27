@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  //se crean unas costantes con los ids de las tablas debido a que se quiere mostrar o hacer un get en dos tablas con ubicaciones
+  //distintas de este moto se facilita la obtencia de infirmacion usan el mismo fetch
   const inputFecha1 = document.getElementById('filtro-reservas');
   const tableBody1 = document.querySelector('#reservasA tbody');
 
@@ -7,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function cargarReservas(fecha, tableBody) {
     let url = '/api/reservaA';
-    if (fecha) {
+    if (fecha) { //aca es para filtar por fecha yy/mm/dd
       url += `?fecha=${fecha}`;
     }
 
@@ -27,19 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => console.error('Error al cargar las reservas:', error));
   }
-
+//proceso de cargar tablas
   if (inputFecha1) {
     inputFecha1.addEventListener('change', (event) => {
       cargarReservas(event.target.value, tableBody1);
     });
-    cargarReservas(undefined, tableBody1); // Cargar todas las reservas inicialmente para la primera tabla
+    cargarReservas(undefined, tableBody1); //Cargar todas las reservas inicialmente para la primera tabla
   }
 
   if (inputFecha2) {
     inputFecha2.addEventListener('change', (event) => {
       cargarReservas(event.target.value, tableBody2);
     });
-    cargarReservas(undefined, tableBody2); // Cargar todas las reservas inicialmente para la segunda tabla
+    cargarReservas(undefined, tableBody2); //Cargar todas las reservas inicialmente para la segunda tabla
   }
 });
 
