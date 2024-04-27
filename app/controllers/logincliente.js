@@ -22,6 +22,7 @@ exports.loginCliente = async (req, res) => {
         } else {
             //Contraseña incorrecta, enviar alerta y redirigir
             res.send(`<script>alert('Contraseña incorrecta'); window.location.href = '/home cliente.html';</script>`);
+            return;
         }
     } catch (error) {
         console.error('Error al iniciar sesión:', error);

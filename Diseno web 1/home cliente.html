@@ -51,7 +51,7 @@
 <body>
   <div class="header">
     <div>Luna Restaurantes</div>
-    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+    <button id="cerrar" class="btn btn-danger"><i class="fas fa-times"></i></button>
   </div>
   <div class="login-form">
     <h2 class="mb-4">Iniciar Sesión</h2>
@@ -74,6 +74,18 @@
       Si tienes cuenta, crea una <a href="registro.html">aquí</a>.
     </div>
   </div>
+  <script>
+    // Obtén el botón por su ID
+    var boton = document.getElementById("cerrar");
+
+    // Agrega un listener para el evento 'click'
+    boton.addEventListener("click", function() {
+        // Define la ubicación a la que quieres redirigir
+        var ubicacion = "home 1.html";
+        // Redirige a la nueva ubicación
+        window.location.href = ubicacion;
+    });
+</script>
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

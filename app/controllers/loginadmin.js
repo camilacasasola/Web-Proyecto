@@ -8,13 +8,15 @@ const loginUserController = async (req, res) => {
 
     if (!user) {
       console.log('Usuario no encontrado en la base de datos.');
-      return res.status(401).send('<p>Usuario no encontrado</p>');
+      res.send(`<script>alert('Usuario no encontrado!!!'); window.location.href = '/home.html';</script>`);
+      return;
     }
 
     // Comparar la contraseña proporcionada con la contraseña almacenada
     if (user.password !== password) {
       console.log('Contraseña incorrecta.');
-      return res.status(401).send('<p>Contraseña Incorrecta</p>');
+      res.send(`<script>alert('Contraseña incorrecta!!!'); window.location.href = '/home.html';</script>`);
+      return;
     }
 
     //Si el inicio de sesión es exitoso, redirige a Menu.html
