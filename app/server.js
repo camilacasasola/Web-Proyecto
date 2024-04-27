@@ -136,6 +136,10 @@ const reservaARoute = require('./routes/reservaAcreate.js');
 //usar la ruta
 app.use('/api/reservaA', reservaARoute)
 
+//ruta para reserva B 
+const reservaBRoute = require('./routes/reservaBcreate.js');
+//usar la ruta
+app.use('/api/reservaB', reservaBRoute);
 
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
