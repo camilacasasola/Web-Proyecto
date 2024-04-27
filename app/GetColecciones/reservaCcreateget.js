@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const inputFecha = document.getElementById('filtro-reservas');
-    
-    function cargarReservas(fecha) {
+    const inputFecha1 = document.getElementById('filtro-reservas');
+    const tableBody1 = document.querySelector('#reservas tbody');
+  
+    const inputFecha2 = document.getElementById('filtro-reservas2');
+    const tableBody2 = document.querySelector('#reservasC2 tbody');
+    function cargarReservas(fecha, tableBody) {
       let url = '/api/reservaC';
       if (fecha) {
         url += `?fecha=${fecha}`; // La fecha ya está en el formato YYYY-MM-DD
@@ -10,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
       fetch(url)
         .then(response => response.json())
         .then(reservas => {
-          const tableBody = document.querySelector('#reservas tbody');
           tableBody.innerHTML = ''; // Limpiar el cuerpo de la tabla antes de añadir nuevas filas
           reservas.forEach(reserva => {
             const row = tableBody.insertRow();
@@ -23,10 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error al cargar las reservas:', error));
     }
   
-    inputFecha.addEventListener('change', (event) => {
-      cargarReservas(event.target.value);
-    });
+    if (inputFecha1) {
+      inputFecha1.addEventListener('change', (event) => {
+        cargarReservas(event.target.value, tableBody1);
+      });
+      cargarReservas(undefined, tableBody1); // Cargar todas las reservas inicialmente para la primera tabla
+    }
   
-    cargarReservas(); // Cargar todas las reservas inicialmente
+    if (inputFecha2) {
+      inputFecha2.addEventListener('change', (event) => {
+        cargarReservas(event.target.value, tableBody2);
+      });
+      cargarReservas(undefined, tableBody2); // Cargar todas las reservas inicialmente para la segunda tabla
+    }
   });
   

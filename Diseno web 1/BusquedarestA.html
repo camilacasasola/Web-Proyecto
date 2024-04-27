@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sección de Búsqueda de Reservas</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      width: 100%;
+      height: 60px;
+      background-color: #2B79C2;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .navbar {
+      background-color: #f8f9fa;
+      padding: 10px 0;
+    }
+    .navbar-nav .nav-link {
+      color: #2b79c2;
+      font-weight: bold;
+    }
+
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>Luna Restaurantes</div>
+    <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Menu.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BusquedarestA.html">Restaurante A</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BusquedarestB.html">Restaurante B</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BusquedarestC.html">Restaurante C</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="search-section">
+    <h2>Sección de Búsqueda de Reservas</h2>
+    <form class="search-form" action="/api/get/reservasA" method="get">
+      <div class="form-group row">
+        <label for="codigo" class="col-sm-2 col-form-label">Código:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="codigo" placeholder="Código">
+        </div>
+        <label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+      <button type="button" class="btn btn-info  mr-2" id="actualizar">Liberar</button>
+      <button type="button" class="btn btn-secondary mr-2" id="limpiar">Limpiar</button>
+      <button type="button" class="btn btn-success mr-2">
+        <a href="ReservaA.html" style="color: white; text-decoration: none;">Crear</a>
+      </button>
+      <button type="button" class="btn btn-danger" id="eliminar">Eliminar</button>
+    
+    
+    </form>
+
+    <div class="search-results">
+      <h3>Resultados de la búsqueda:</h3>
+      <label for="filtro-reservas">Filtrar por fecha:</label><br>
+      <input type="date" id="filtro-reservas2" name="filtro-reservas2">
+      <table class="table" id="reservasA2">
+        <thead>
+          <tr>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Numero de Personas</th>
+          <th>Numero de Mesa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- se agrega desde el js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2024 Luna Restaurantes. Todos los derechos reservados.
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/app/GetColecciones/reservaAcreateget.js"></script>
+</body>
+</html>
