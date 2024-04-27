@@ -141,6 +141,11 @@ const reservaBRoute = require('./routes/reservaBcreate.js');
 //usar la ruta
 app.use('/api/reservaB', reservaBRoute);
 
+//ruta para reserva C
+const reservaCRoutes = require('./routes/reservaCcreate.js');
+//usar la ruta
+app.use('/api/reservaC', reservaCRoutes);
+
 //ruta para get de bebidas
 //const getBebidas = require('./routes/bebidacreateget.js');
 //usar las rutes get

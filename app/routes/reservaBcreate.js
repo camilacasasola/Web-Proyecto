@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const reservaAController = require('../controllers/reservaBcreate');
+const reservaBController = require('../controllers/reservaBcreate');
 
-router.post('/', reservaAController.createReservaB);
-router.get('/', reservaAController.getReservas);
+router.post('/', reservaBController.createReservaB);
+router.get('/', reservaBController.getReservas);
 module.exports = router;

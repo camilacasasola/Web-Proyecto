@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const reservaASchema = new mongoose.Schema({
+const reservaBSchema = new mongoose.Schema({
   fecha: { type: Date, required: true },
   hora: { type: String, required: true },
   nombrerestaurante: { type: String, required: true },
-  numeromesa: { type: String, required: true }
+  numeromesa: { type: Number, required: true }
 });
 //indice unico para reserva
-reservaASchema.index({ fecha: 1, hora: 1 }, { unique: true });
+reservaBSchema.index({ fecha: 1, hora: 1 }, { unique: true });
 
-module.exports = mongoose.model('ReservaB', reservaASchema);
+module.exports = mongoose.model('ReservaB', reservaBSchema);
 
